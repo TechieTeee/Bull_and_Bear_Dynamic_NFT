@@ -28,17 +28,17 @@ contract BullBear is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     // NOTE: These connect to my IPFS Companion node.
     // You should upload the contents of the /ipfs folder to your own node for development.
     string[] bullUrisIpfs = [
-        "https://ipfs.io/ipfs/QmRXyfi3oNZCubDxiVFre3kLZ8XeGt6pQsnAQRZ7akhSNs?filename=gamer_bull.json",
-        "https://ipfs.io/ipfs/QmRJVFeMrtYS2CUVUM2cHJpBV5aX2xurpnsfZxLTTQbiD3?filename=party_bull.json",
-        "https://ipfs.io/ipfs/QmdcURmN1kEEtKgnbkVJJ8hrmsSWHpZvLkRgsKKoiWvW9g?filename=simple_bull.json"
+    "https://ipfs.io/ipfs/QmRXyfi3oNZCubDxiVFre3kLZ8XeGt6pQsnAQRZ7akhSNs?filename=gamer_bull.json",
+    "https://ipfs.io/ipfs/QmRJVFeMrtYS2CUVUM2cHJpBV5aX2xurpnsfZxLTTQbiD3?filename=party_bull.json",
+    "https://ipfs.io/ipfs/QmdcURmN1kEEtKgnbkVJJ8hrmsSWHpZvLkRgsKKoiWvW9g?filename=simple_bull.json"
     ];
     string[] bearUrisIpfs = [
-        "https://ipfs.io/ipfs/Qmdx9Hx7FCDZGExyjLR6vYcnutUR8KhBZBnZfAPHiUommN?filename=beanie_bear.json",
-        "https://ipfs.io/ipfs/QmTVLyTSuiKGUEmb88BgXG3qNC8YgpHZiFbjHrXKH3QHEu?filename=coolio_bear.json",
-        "https://ipfs.io/ipfs/QmbKhBXVWmwrYsTPFYfroR2N7NAekAMxHUVg2CWks7i9qj?filename=simple_bear.json"
+    "https://ipfs.io/ipfs/Qmdx9Hx7FCDZGExyjLR6vYcnutUR8KhBZBnZfAPHiUommN?filename=beanie_bear.json",
+    "https://ipfs.io/ipfs/QmTVLyTSuiKGUEmb88BgXG3qNC8YgpHZiFbjHrXKH3QHEu?filename=coolio_bear.json",
+    "https://ipfs.io/ipfs/QmbKhBXVWmwrYsTPFYfroR2N7NAekAMxHUVg2CWks7i9qj?filename=simple_bear.json"
     ];
 
-    constructor() ERC721("Bull&Bear", "BBTK") {}
+    constructor() ERC721("BullBear","BBTK") {}
 
     function safeMint(address to) public {
         // Current counter value will be the minted token's token ID.
@@ -72,26 +72,26 @@ contract BullBear is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     }
 
     function _burn(uint256 tokenId)
-        internal
-        override(ERC721, ERC721URIStorage)
+    internal
+    override(ERC721, ERC721URIStorage)
     {
         super._burn(tokenId);
     }
 
     function tokenURI(uint256 tokenId)
-        public
-        view
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
+    public
+    view
+    override(ERC721, ERC721URIStorage)
+    returns (string memory)
     {
         return super.tokenURI(tokenId);
     }
 
     function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
+    public
+    view
+    override(ERC721, ERC721Enumerable)
+    returns (bool)
     {
         return super.supportsInterface(interfaceId);
     }
